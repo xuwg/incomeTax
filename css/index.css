@@ -1,18 +1,21 @@
 .inner_c {
     margin: 0 auto;
-    width:800px;
+    width: 800px;
 }
-.cal {
-}
-.cal .right{
+
+.cal {}
+
+.cal .right {
     margin: 0 10px;
 }
-.cal h1{
+
+.cal h1 {
     font: 700 20px/25px "simsun";
     margin: 10px;
 }
+
 .cal li {
-    height:30px;
+    height: 30px;
     line-height: 30px;
     margin: 2px 0;
 }
@@ -26,6 +29,7 @@
 .cal input {
     height: 25px;
 }
+
 .cal input {
     border: 1px solid #000;
 }
@@ -33,12 +37,32 @@
 .cal .jiSuan {
     margin: 0 20px 0px 90px;
 }
+
 .cal .jiSuan,
-.cal .reset {    
-    width:50px;
+.cal .reset {
+    width: 50px;
     height: 30px;
 }
 
 .cal .taxShuoDe {
     width: 200px;
+}
+
+.cal button {
+    display: block;
+    position: relative;
+    background: #7EBF4F;
+    padding: 5px;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cal button:hover {
+    background-color: #a00;
+}
+
+.cal button:active {
+    background-color: #444;
 }
