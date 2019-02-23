@@ -1,44 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <meta name="keywords" content="个人所得税计算器,个税累计预扣法,个税计算器,个税计算器2019,个人所得税">
-    <meta name="description" content="2019年最新个人所得税计算器，采用2019年最新个税税率表，提供工资、税后工资、年终奖、劳务报酬等个税累计预扣预缴计算方法，2019年最好用的个税计算器,个税管理专家。"> -->
-    <!-- <title>工资计算器 | 个税计算器2019 - 个人所得税计算器2019</title> -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="keywords" content="个税计算器,个税累计预扣法,个人所得税计算器,个税计算器2019,个人所得税">
+    <meta name="description" content="2019年最新个人所得税计算器，采用2019年最新个税税率表，提供工资、税后工资、年终奖、劳务报酬等个税累计预扣预缴计算方法，2019年最好用的个税计算器,个税管理专家。">
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>个税计算器2019</title>
 </head>
+
 <body>
     <div></div>
     <div></div>
     <!-- 计算器界面 -->
-    <div>
-        <div class="item">
-            <span>收入类型：</span>            
-            <select name="" id="">
-                <option value="1">工资薪资收入</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>
+    <div class="inner_c">
+        <div class="cal clearfix">
+            <div class="left fl">
+                <h1>个税计算器2019</h1>
+                <ul>
+                    <li>                        
+                        <span>收入类型</span><select name="" id="shouRuType">
+                            <option value="1">工资薪资收入</option>
+                            <!-- <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option> -->
+                        </select>
+                    </li>
+                    <li>                        
+                        <span>纳税期数</span><select name="" id="qiShu">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>本月工资</span><input type="text" name="" id="gongZi" value="21200" /><span>元</span>
+                    </li>
+                    <li>
+                        <span>累计</span><input type="text" name="" id="gongZiAcc"><span>元</span>
+                    </li>
+                    <li>
+                        <span>补助</span><input type="text" name="" id="buZhu" value="330" /><span>元</span>
+                    </li>
+                    <li>
+                        <span>累计</span><input type="text" name="" id="buZhuAcc"><span>元</span>
+                    </li>
+                    <li>
+                        <span>各项社会保险费</span><input type="text" name="" id="baoXian" value="382.33"><span>元</span>
+                    </li>
+                    <li>
+                        <span>累计</span><input type="text" name="" id="baoXianAcc"><span>元</span>
+                    </li>
+                    <li>
+                        <span>公积金</span><input type="text" name="" id="gongJiJin" value="2280"><span>元</span>
+                    </li>
+                    <li>
+                        <span>累计</span><input type="text" name="" id="gongJiJinAcc"><span>元</span>
+                    </li>
+                    <li>
+                        <span>专项附加扣除</span><input type="text" name="" id="fuJia" value="4000"><span>元</span>
+                    </li>
+                    <li>
+                        <span>累计</span><input type="text" name="" id="fuJiaAcc"><span>元</span>
+                    </li>
+                </ul>
+                <input id="cal" type="button" value="计算" class="jiSuan" />
+                <input id="reset" type="reset" value="重置" class="reset" />
+            </div>
+            <div class="right fl">
+                <h1>个税计算结果</h1>
+                <ul>
+                    <li><span id="taxShuoDe" class="taxShuoDe">应纳税所得额0元</span></li>
+                    <li id="taxLv">适用税率0%</li>
+                    <li id="taxKouChu">速算扣除数0元</li>
+                    <li><span>累计应缴税款</span><input type="text" name="" id="yingJiaotax"/><span>元</span></li>
+                    <li><span>已缴税款</span><input type="text" name="" id="yiJiaoTax"/><span>元</span></li>
+                    <li><span>应补（退）税款</span><input type="text" name="" id="tuiBuTax"/><span>元</span></li>
+                    <li><span>本月税后收入</span><input type="text" name="" id="shouRu"/><span>元</span></li>
+                </ul>
+            </div>
         </div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
     </div>
     <div></div>
     <div></div>
 </body>
+
 </html>
