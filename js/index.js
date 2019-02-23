@@ -73,6 +73,25 @@ window.onload = function () {
         return taxShuoDe;
     }
 
+    // 获取前一个月的应税所得
+    function GetPreMonthTaxShuoDe(qiShu) {
+
+        qiShu--;
+        if (qiShu <= 0) {
+            return 0;
+        } else {
+            var gongZiAcc = $("gongZi").value * qiShu;
+            var buZhuAcc = $("buZhu").value * qiShu;
+            var baoXianAcc = $("baoXian").value * qiShu;
+            var gongJiJinAcc = $("gongJiJin").value * qiShu;
+            var fuJiaAcc = $("fuJia").value * qiShu;
+            // 总收入去掉免税额得到应税金额
+            var taxShuoDe = parseFloat(gongZiAcc) + parseFloat(buZhuAcc) - 5000 * qiShu - baoXianAcc - gongJiJinAcc - fuJiaAcc;
+
+            return taxShuoDe;
+        }
+    }
+
     $("cal").onclick = function () {
         var taxKouChu = $("taxKouChu").value;
 
@@ -80,18 +99,19 @@ window.onload = function () {
         $("taxShuoDe").innerText = "应纳税所得额" + taxShuoDe.toFixed(2) + "元";
         var taxLv = GetTaxLv(taxShuoDe);
         $("taxLv").innerText = "适用税率" + taxLv + "%";
-        var tax = (taxShuoDe * taxLv / 100).toFixed(2);
+        var kouChuShu = GetKouChuShu(taxShuoDe);
+        console.log(kouChuShu);
+        $("taxKouChu").innerText = "速算扣除数" + kouChuShu + "元";
+        var tax = (taxShuoDe * taxLv / 100-kouChuShu).toFixed(2);
         $("yingJiaotax").value = tax; //累积应交税款
 
         // 前一个月应税所得
-        var preMonthTaxShuoDe = qiShu == 1 ? 0 : GetTaxShuoDe(qiShu - 1);
-
-        var yiJiaoTax = qiShu == 1 ? 0 : (preMonthTaxShuoDe * GetTaxLv(preMonthTaxShuoDe) / 100).toFixed(2); //已交税
-        $("yiJiaoTax").value = yiJiaoTax;
-        var tuiBuTax = tax - yiJiaoTax;
+        var preMonthTaxShuoDe = GetPreMonthTaxShuoDe(qiShu);
+        var yiJiaoTax = (preMonthTaxShuoDe * GetTaxLv(preMonthTaxShuoDe) / 100-GetKouChuShu(preMonthTaxShuoDe)).toFixed(2); //已交税
+        $("yiJiaoTax").value = yiJiaoTax;//已缴税款
+        var tuiBuTax = (tax - yiJiaoTax).toFixed(2);//退补税款
         $("tuiBuTax").value = tuiBuTax;
-
-        console.log($("gongJiJin").value);
+        // 收入
         $("shouRu").value = parseFloat($("gongZi").value - $("baoXian").value - $("gongJiJin").value - tuiBuTax + parseFloat($("buZhu").value)).toFixed(2);
 
         function GetTaxLv(taxShuoDe) {
@@ -112,6 +132,28 @@ window.onload = function () {
                     return 45;
                 }
             }
+            return 0;
+        }
+
+        function GetKouChuShu(taxShuoDe) {
+            if (taxShuoDe > 0) {
+                if (taxShuoDe <= 36000) {
+                    return 0;
+                } else if (taxShuoDe <= 144000) {
+                    return 2520;
+                } else if (taxShuoDe <= 300000) {
+                    return 16920;
+                } else if (taxShuoDe <= 420000) {
+                    return 31920;
+                } else if (taxShuoDe <= 660000) {
+                    return 52920;
+                } else if (taxShuoDe <= 960000) {
+                    return 85920;
+                } else {
+                    return 181920;
+                }
+            }
+            return 0;
         }
     }
 
