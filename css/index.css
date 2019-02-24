@@ -5,7 +5,9 @@
 
 /* 保险公积金左侧小图标 */
 .cal {
-    margin: 0 0 0 32px;
+    /* margin: 0 0 0 32px; */
+    margin: 0 auto;
+    width:503px;
 }
 .cal .right{
     margin: 0 10px;
