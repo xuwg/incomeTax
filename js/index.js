@@ -43,11 +43,24 @@ window.onload = function () {
     select("buZhu");
     select("buZhuAcc");
     select("baoXian");
-    select("baoXianAcc");
+    select("baoXianAcc");    
+    select("yangLaoJiShu");
+    select("yangLaoFei");
+    select("shiYeJiShu");
+    select("shiYeFei");
+    select("gongShangJiShu");
+    select("gongShangFei");
+    select("shengYvJiShu");
+    select("shengYvFei");
+    select("yiLiaoJiShu");
+    select("yiLiaoFei");
     select("gongJiJin");
     select("gongJiJinAcc");
+    select("gongJiJinJiShu");
+    select("gongJiJinFei");
     select("fuJia");
     select("fuJiaAcc");
+    
 
     var baoXianDisplay = 0;
     $("baoXianIco").onclick = function () {
