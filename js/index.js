@@ -86,6 +86,7 @@ window.onload = function () {
         var baoXianFei = parseFloat(yangLaoFei==""?0:yangLaoFei) + parseFloat(shiYeFei==""?0:shiYeFei) 
         + parseFloat(gongShangFei==""?0:gongShangFei) + parseFloat(shengYvFei==""?0:shengYvFei) + parseFloat(yiLiaoFei==""?0:yiLiaoFei);
         $("baoXian").value = baoXianFei.toFixed(2);
+        $("baoXianAcc").value = baoXianFei.toFixed(2)*qiShu;
     }
 
     //保险基数联动 保险费 

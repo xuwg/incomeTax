@@ -7,7 +7,9 @@
 .cal {
     margin: 0 0 0 32px;
 }
-
+.cal .right{
+    margin: 0 10px;
+}
 .cal h1 {
     font: 700 20px/25px "simsun";
     margin: 10px;
