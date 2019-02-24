@@ -126,6 +126,24 @@ window.onload = function () {
     }
     baoXianJiShuLianDong("yiLiaoJiShu", "yiLiaoFei", 0.02, 3);
 
+    // 公积金联动
+    $("gongJiJinJiShu").oninput = function() {
+
+        var gongJiJinJiShu = $("gongJiJinJiShu").value;
+        gongJiJinJiShu = gongJiJinJiShu==""?0:gongJiJinJiShu;
+        var gongJiJinFei = gongJiJinJiShu*0.12;
+        $("gongJiJinFei").value = gongJiJinFei;
+        $("gongJiJin").value = gongJiJinFei;
+        $("gongJiJinAcc").value = gongJiJinFei;
+    }
+    $("gongJiJinFei").oninput = function() {
+
+        var gongJiJinFei = $("gongJiJinFei").value;
+        gongJiJinFei = gongJiJinFei==""?0:gongJiJinFei;
+        $("gongJiJin").value = gongJiJinFei;
+        $("gongJiJinAcc").value = gongJiJinFei;
+    }
+
     // 根据输入计算累积，没有累计值的情况下，使用单个月的值乘以期数
     function prepare(input, acc, qiShu) {
         var inputValue = $(input).value;
