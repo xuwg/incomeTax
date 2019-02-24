@@ -147,14 +147,14 @@ window.onload = function () {
         var gongJiJinFei = gongJiJinJiShu*0.12;
         $("gongJiJinFei").value = gongJiJinFei;
         $("gongJiJin").value = gongJiJinFei;
-        $("gongJiJinAcc").value = gongJiJinFei;
+        $("gongJiJinAcc").value = gongJiJinFei*qiShu;
     }
     $("gongJiJinFei").oninput = function() {
 
         var gongJiJinFei = $("gongJiJinFei").value;
         gongJiJinFei = gongJiJinFei==""?0:gongJiJinFei;
         $("gongJiJin").value = gongJiJinFei;
-        $("gongJiJinAcc").value = gongJiJinFei;
+        $("gongJiJinAcc").value = gongJiJinFei*qiShu;
     }
 
     // 根据输入计算累积，没有累计值的情况下，使用单个月的值乘以期数
