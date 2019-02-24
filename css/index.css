@@ -3,10 +3,9 @@
     width: 800px;
 }
 
-.cal {}
-
-.cal .right {
-    margin: 0 10px;
+/* 保险公积金左侧小图标 */
+.cal {
+    margin: 0 0 0 32px;
 }
 
 .cal h1 {
@@ -15,9 +14,8 @@
 }
 
 .cal li {
-    height: 30px;
-    line-height: 30px;
-    margin: 2px 0;
+    padding: 2px 0;
+    position: relative;
 }
 
 .cal li span {
@@ -33,7 +31,7 @@
 .cal input {
     border: 1px solid #000;
 }
-
+/* 计算按钮 */
 .cal .jiSuan {
     margin: 0 20px 0px 90px;
 }
@@ -65,4 +63,25 @@
 
 .cal button:active {
     background-color: #444;
+}
+
+.cal .treeIcon{
+    width: 32px;
+    height: 32px;
+    background: url(../images/32px.png) no-repeat 0 0 ;
+    position: absolute;
+    left:-32px;
+    top: 0;
+}
+.cal .jiShu {
+    width: 40px;
+}
+.cal .biLi {
+    width: 40px;
+}
+.cal #baoXianDetail {
+    display: none;
+}
+.cal #gongJiJinDetail {
+    display: none;
 }
