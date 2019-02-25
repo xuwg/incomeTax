@@ -150,6 +150,19 @@ em {
     display: none
 }
 
+body{
+    background-color: #f5f6f7;
+}
+
+.inner_c {
+    margin: 0 auto;
+    width: 580px;
+}
+
+.gap{
+    height: 5px;
+}
+
 .head {
     background-color: #fff;
 }
@@ -173,10 +186,6 @@ em {
     border-bottom: 2px solid red;
 }
 
-.body {
-    background-color: #f5f6f7;
-}
-
-.footer {
-    background-color: #fff;
+.beiAn{
+    text-align: center;
 }

@@ -1,13 +1,9 @@
-.inner_c {
-    margin: 0 auto;
-    width: 800px;
-}
-
 /* 保险公积金左侧小图标 */
 .cal {
-    margin: 0 0 0 32px;
-    /* margin: 0 auto; */
-    width: 580px;
+    padding: 0 0 0 32px;
+    margin: 0 auto;
+    width: 548px;
+    background-color: #fff;
 }
 
 .cal .right {
@@ -89,8 +85,11 @@
     width: 40px;
 }
 
+/* 案例 */
 .example {
     width: 580px;
+    margin: 0 auto;
+    background-color: #fff;
 }
 .example h1 {
     font: 500 20px/25px "sim sun";
