@@ -14,18 +14,33 @@
 </head>
 
 <body>
-    <div></div>
-    <div></div>
-    <!-- 计算器界面 -->
-    <div class="inner_c">
-        <div class="cal clearfix">
-            <div class="left fl" id="left">
-                <h1>个税计算器2019</h1>
+    <div class="head">
+        <div class="inner_c">
+            <div class="nav">
                 <ul>
-                    <li>
-                        <span>收入类型</span><select name="" id="shouRuType">
-                            <option value="1">工资薪资收入</option>
-                            <!-- <option value=""></option>
+                    <li id="shouYe" class="current">首页</li>
+                    <li id="shuiLvBiao">2019个税税率表</li>
+                    <li id="shuiNews">个税资讯</li>
+                </ul>
+                <ol class="fr">
+                    <li>小程序</li>
+                    <li>QQ群</li>
+                    <li>联系我们</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <!-- 计算器界面 -->
+        <div class="inner_c">
+            <div class="cal clearfix">
+                <div class="left fl" id="left">
+                    <h1>个税计算器2019</h1>
+                    <ul>
+                        <li>
+                            <span>收入类型</span><select name="" id="shouRuType">
+                                <option value="1">工资薪资收入</option>
+                                <!-- <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -34,110 +49,113 @@
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option> -->
-                        </select>
-                    </li>
-                    <li>
-                        <span>纳税期数</span><select name="" id="qiShu">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                    </li>
-                    <li>
-                        <span>本月工资</span><input type="text" name="" id="gongZi" value="" />元
-                    </li>
-                    <li>
-                        <span>累计</span><input type="text" name="" id="gongZiAcc">元
-                    </li>
-                    <li>
-                        <span>补助</span><input type="text" name="" id="buZhu" value="" />元
-                    </li>
-                    <li>
-                        <span>累计</span><input type="text" name="" id="buZhuAcc">元
-                    </li>
-                    <li>
-                        <i class="treeIcon" id="baoXianIco"></i><span>各项社会保险费</span><input type="text" name="" id="baoXian"
-                            value="">元
-                        <div id="baoXianDetail">
-                            <ul>
-                                <li><span>养老保险基数</span><input type="text" value="3387" name="" class="jiShu" id="yangLaoJiShu">元&nbsp个人缴费&nbsp<input
-                                        type="text" value="270.96" name="" class="biLi" id="yangLaoFei">元</li>
-                                <li><span>失业保险基数</span><input type="text" value="3387" name="" class="jiShu" id="shiYeJiShu">元&nbsp个人缴费&nbsp<input
-                                        type="text" value="6.77" name="" class="biLi" id="shiYeFei">元</li>
-                                <li><span>工伤保险基数</span><input type="text" value="5080" name="" class="jiShu" id="gongShangJiShu">元&nbsp个人缴费&nbsp<input
-                                        type="text" value="0" name="" class="biLi" id="gongShangFei">元</li>
-                                <li><span>生育保险基数</span><input type="text" value="5080" name="" class="jiShu" id="shengYvJiShu">元&nbsp个人缴费&nbsp<input
-                                        type="text" value="0" name="" class="biLi" id="shengYvFei">元</li>
-                                <li><span>医疗保险基数</span><input type="text" value="5080" name="" class="jiShu" id="yiLiaoJiShu">元&nbsp个人缴费&nbsp<input
-                                        type="text" value="104.60" name="" class="biLi" id="yiLiaoFei">元</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span>累计</span><input type="text" name="" id="baoXianAcc">元
-                    </li>
-                    <li>
-                        <i class="treeIcon" id="gongJiJinIco"></i><span>公积金</span><input type="text" name="" id="gongJiJin"
-                            value="">元
-                        <div id="gongJiJinDetail">
-                            <ul>
-                                <li><span>公积金基数</span><input type="text" name="" class="jiShu" id="gongJiJinJiShu">元&nbsp个人缴费&nbsp<input
-                                        type="text" name="" class="biLi" id="gongJiJinFei">元</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span>累计</span><input type="text" name="" id="gongJiJinAcc">元
-                    </li>
-                    <li>
-                        <span>专项附加扣除</span><input type="text" name="" id="fuJia" value="">元
-                    </li>
-                    <li>
-                        <span>累计</span><input type="text" name="" id="fuJiaAcc">元
-                    </li>
-                </ul>
-                <button id="cal" type="submit" value="" class="jiSuan">计算</button>
-                <button id="reset" type="reset" value="" class="reset">重置</button>
+                            </select>
+                        </li>
+                        <li>
+                            <span>纳税期数</span><select name="" id="qiShu">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span>本月工资</span><input type="text" name="" id="gongZi" value="" />元
+                        </li>
+                        <li>
+                            <span>累计</span><input type="text" name="" id="gongZiAcc">元
+                        </li>
+                        <li>
+                            <span>补助</span><input type="text" name="" id="buZhu" value="" />元
+                        </li>
+                        <li>
+                            <span>累计</span><input type="text" name="" id="buZhuAcc">元
+                        </li>
+                        <li>
+                            <i class="treeIcon" id="baoXianIco"></i><span>各项社会保险费</span><input type="text" name="" id="baoXian"
+                                value="">元
+                            <div id="baoXianDetail">
+                                <ul>
+                                    <li><span>养老保险基数</span><input type="text" value="3387" name="" class="jiShu" id="yangLaoJiShu">元&nbsp个人缴费&nbsp<input
+                                            type="text" value="270.96" name="" class="biLi" id="yangLaoFei">元</li>
+                                    <li><span>失业保险基数</span><input type="text" value="3387" name="" class="jiShu" id="shiYeJiShu">元&nbsp个人缴费&nbsp<input
+                                            type="text" value="6.77" name="" class="biLi" id="shiYeFei">元</li>
+                                    <li><span>工伤保险基数</span><input type="text" value="5080" name="" class="jiShu" id="gongShangJiShu">元&nbsp个人缴费&nbsp<input
+                                            type="text" value="0" name="" class="biLi" id="gongShangFei">元</li>
+                                    <li><span>生育保险基数</span><input type="text" value="5080" name="" class="jiShu" id="shengYvJiShu">元&nbsp个人缴费&nbsp<input
+                                            type="text" value="0" name="" class="biLi" id="shengYvFei">元</li>
+                                    <li><span>医疗保险基数</span><input type="text" value="5080" name="" class="jiShu" id="yiLiaoJiShu">元&nbsp个人缴费&nbsp<input
+                                            type="text" value="104.60" name="" class="biLi" id="yiLiaoFei">元</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span>累计</span><input type="text" name="" id="baoXianAcc">元
+                        </li>
+                        <li>
+                            <i class="treeIcon" id="gongJiJinIco"></i><span>公积金</span><input type="text" name="" id="gongJiJin"
+                                value="">元
+                            <div id="gongJiJinDetail">
+                                <ul>
+                                    <li><span>公积金基数</span><input type="text" name="" class="jiShu" id="gongJiJinJiShu">元&nbsp个人缴费&nbsp<input
+                                            type="text" name="" class="biLi" id="gongJiJinFei">元</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span>累计</span><input type="text" name="" id="gongJiJinAcc">元
+                        </li>
+                        <li>
+                            <span>专项附加扣除</span><input type="text" name="" id="fuJia" value="">元
+                        </li>
+                        <li>
+                            <span>累计</span><input type="text" name="" id="fuJiaAcc">元
+                        </li>
+                    </ul>
+                    <button id="cal" type="submit" value="" class="jiSuan">计算</button>
+                    <button id="reset" type="reset" value="" class="reset">重置</button>
+                </div>
+                <div class="right fl" id="right">
+                    <h1>个税计算结果</h1>
+                    <ul>
+                        <li><span id="taxShuoDe" class="taxShuoDe">应纳税所得额0元</span></li>
+                        <li id="taxLv">适用税率0%</li>
+                        <li id="taxKouChu">速算扣除数0元</li>
+                        <li><span>累计应缴税款</span><input type="text" name="" id="yingJiaotax" />元
+                        <li><span>已缴税款</span><input type="text" name="" id="yiJiaoTax" />元</li>
+                        <li><span>应补（退）税款</span><input type="text" name="" id="tuiBuTax" />元</li>
+                        <li><span>本月税后收入</span><input type="text" name="" id="shouRu" />元</li>
+                    </ul>
+                </div>
             </div>
-            <div class="right fl" id="right">
-                <h1>个税计算结果</h1>
-                <ul>
-                    <li><span id="taxShuoDe" class="taxShuoDe">应纳税所得额0元</span></li>
-                    <li id="taxLv">适用税率0%</li>
-                    <li id="taxKouChu">速算扣除数0元</li>
-                    <li><span>累计应缴税款</span><input type="text" name="" id="yingJiaotax" />元
-                    <li><span>已缴税款</span><input type="text" name="" id="yiJiaoTax" />元</li>
-                    <li><span>应补（退）税款</span><input type="text" name="" id="tuiBuTax" />元</li>
-                    <li><span>本月税后收入</span><input type="text" name="" id="shouRu" />元</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="example">
-            <h1>案例说明</h1> 
-            公司员工张三：2019年1月工资15000元；2019年2月工资45000元；2019年3月工资15000元。有一个正在上小学的儿子，子女教育每月扣除1000元；首套住房贷款利息支出每月1000元；父母健在，且是独生子女，赡养老人支出每月可以扣除2000元。五险一金每月缴纳3000元。购买符合条件的商业健康保险每月200元。
-            <h2>2019年1月</h2>
-            应纳税所得额=15000-5000（累计减除费用）-3000（累计专项扣除）-4000（累计专项附加扣除）-200（累计依法确定的其他扣除）=2800元
-            应纳税额=2800*3%=84元
-            <h2>2019年2月</h2>
-            应纳税所得额=60000（累计收入）-10000（累计减除费用）-6000（累计专项扣除）-8000（累计专项附加扣除）-400（累计依法确定的其他扣除）=35600元
-            应纳税额=35600*3%=1068-84（已预缴预扣税额）=984元
-            <h2>2019年3月</h2>
-            应纳税所得额=75000（累计收入）-15000（累计基本减除费用）-9000（累计专项扣除）-12000（累计专项附加扣除）-600（累计依法确定的其他扣除）=38400元
-            应纳税额=38400*10%-2520-1068（已预缴预扣税额）=252元
+            <div class="example">
+                <h1>案例说明</h1>
+                公司员工张三：2019年1月工资15000元；2019年2月工资45000元；2019年3月工资15000元。有一个正在上小学的儿子，子女教育每月扣除1000元；首套住房贷款利息支出每月1000元；父母健在，且是独生子女，赡养老人支出每月可以扣除2000元。五险一金每月缴纳3000元。购买符合条件的商业健康保险每月200元。
+                <h2>2019年1月</h2>
+                应纳税所得额=15000-5000（累计减除费用）-3000（累计专项扣除）-4000（累计专项附加扣除）-200（累计依法确定的其他扣除）=2800元
+                应纳税额=2800*3%=84元
+                <h2>2019年2月</h2>
+                应纳税所得额=60000（累计收入）-10000（累计减除费用）-6000（累计专项扣除）-8000（累计专项附加扣除）-400（累计依法确定的其他扣除）=35600元
+                应纳税额=35600*3%=1068-84（已预缴预扣税额）=984元
+                <h2>2019年3月</h2>
+                应纳税所得额=75000（累计收入）-15000（累计基本减除费用）-9000（累计专项扣除）-12000（累计专项附加扣除）-600（累计依法确定的其他扣除）=38400元
+                应纳税额=38400*10%-2520-1068（已预缴预扣税额）=252元
+            </div>
         </div>
     </div>
-    <div></div>
-    <div></div>
+    <div class="footer">
+        <foot class="inner_c">
+            <div></div>
+        </foot>
+    </div>
 </body>
-
 </html>
