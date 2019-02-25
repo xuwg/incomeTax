@@ -4,6 +4,7 @@ window.onload = function () {
     }
 
     var qiShu = $("qiShu").value;
+    $("gongZi").focus();
 
     $("qiShu").onchange = function () {
 
@@ -62,7 +63,7 @@ window.onload = function () {
     select("fuJiaAcc");
     
 
-    var baoXianDisplay = 0;
+    var baoXianDisplay = 1;
     $("baoXianIco").onclick = function () {
         if (baoXianDisplay) {
             $("baoXianDetail").style.display = "none";
@@ -75,7 +76,7 @@ window.onload = function () {
         }
     }
 
-    var gongJiJinDisplay = 0;
+    var gongJiJinDisplay = 1;
     $("gongJiJinIco").onclick = function () {
         if (gongJiJinDisplay) {
             $("gongJiJinDetail").style.display = "none";

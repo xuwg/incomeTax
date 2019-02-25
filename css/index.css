@@ -5,13 +5,15 @@
 
 /* 保险公积金左侧小图标 */
 .cal {
-    /* margin: 0 0 0 32px; */
-    margin: 0 auto;
-    width:580px;
+    margin: 0 0 0 32px;
+    /* margin: 0 auto; */
+    width: 580px;
 }
-.cal .right{
+
+.cal .right {
     margin: 0 10px;
 }
+
 .cal h1 {
     font: 700 20px/25px "simsun";
     margin: 10px;
@@ -35,6 +37,7 @@
 .cal input {
     border: 1px solid #000;
 }
+
 /* 计算按钮 */
 .cal .jiSuan {
     margin: 0 20px 0px 90px;
@@ -69,23 +72,30 @@
     background-color: #444;
 }
 
-.cal .treeIcon{
+.cal .treeIcon {
     width: 32px;
     height: 32px;
-    background: url(../images/32px.png) no-repeat 0 0 ;
+    background: url(../images/32px.png) no-repeat -32px 0;
     position: absolute;
-    left:-32px;
+    left: -32px;
     top: 0;
 }
+
 .cal .jiShu {
     width: 40px;
 }
+
 .cal .biLi {
     width: 40px;
 }
-.cal #baoXianDetail {
-    display: none;
+
+.example {
+    width: 580px;
 }
-.cal #gongJiJinDetail {
-    display: none;
+.example h1 {
+    font: 500 20px/25px "sim sun";
+}
+
+.example h2 {
+    font: 500 15px/20px "sim sun";
 }
