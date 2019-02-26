@@ -40,7 +40,7 @@ function cal() {
     select("buZhu");
     select("buZhuAcc");
     select("baoXian");
-    select("baoXianAcc");    
+    select("baoXianAcc");
     select("yangLaoJiShu");
     select("yangLaoFei");
     select("shiYeJiShu");
@@ -57,13 +57,13 @@ function cal() {
     select("gongJiJinFei");
     select("fuJia");
     select("fuJiaAcc");
-    
+
 
     var baoXianDisplay = 1;
     $("baoXianIco").onclick = function () {
         if (baoXianDisplay) {
             $("baoXianDetail").style.display = "none";
-            this.style.backgroundPosition = "0 0"; 
+            this.style.backgroundPosition = "0 0";
             baoXianDisplay = 0;
         } else {
             $("baoXianDetail").style.display = "block";
@@ -76,7 +76,7 @@ function cal() {
     $("gongJiJinIco").onclick = function () {
         if (gongJiJinDisplay) {
             $("gongJiJinDetail").style.display = "none";
-            this.style.backgroundPosition = "0 0"; 
+            this.style.backgroundPosition = "0 0";
             gongJiJinDisplay = 0;
         } else {
             $("gongJiJinDetail").style.display = "block";
@@ -93,25 +93,25 @@ function cal() {
         var shengYvFei = $("shengYvFei").value;
         var yiLiaoFei = $("yiLiaoFei").value;
 
-        var baoXianFei = parseFloat(yangLaoFei==""?0:yangLaoFei) + parseFloat(shiYeFei==""?0:shiYeFei) 
-        + parseFloat(gongShangFei==""?0:gongShangFei) + parseFloat(shengYvFei==""?0:shengYvFei) + parseFloat(yiLiaoFei==""?0:yiLiaoFei);
+        var baoXianFei = parseFloat(yangLaoFei == "" ? 0 : yangLaoFei) + parseFloat(shiYeFei == "" ? 0 : shiYeFei) +
+            parseFloat(gongShangFei == "" ? 0 : gongShangFei) + parseFloat(shengYvFei == "" ? 0 : shengYvFei) + parseFloat(yiLiaoFei == "" ? 0 : yiLiaoFei);
         $("baoXian").value = Math.round(baoXianFei).toFixed(2);
-        $("baoXianAcc").value = Math.round(baoXianFei*qiShu).toFixed(2);
+        $("baoXianAcc").value = Math.round(baoXianFei * qiShu).toFixed(2);
     }
 
     //保险基数联动 保险费 
     function baoXianJiShuLianDong(jishu, fei, rate, extra) {
-        $(jishu).oninput = function(){
+        $(jishu).oninput = function () {
             var jiShu = $(jishu).value;
-            jiShu = jiShu==""?0:jiShu;
-            $(fei).value = Math.round(jiShu*rate+parseFloat(extra)).toFixed(2);
-    
+            jiShu = jiShu == "" ? 0 : jiShu;
+            $(fei).value = Math.round(jiShu * rate + parseFloat(extra)).toFixed(2);
+
             setBaoXianFei();
         }
     }
 
     // 养老比例
-    var yangLaoBiLi  = 0.08;
+    var yangLaoBiLi = 0.08;
     // 失业比例
     var shiYeBiLi = 0.002;
     // 医疗比例
@@ -120,47 +120,47 @@ function cal() {
     var gongJiJinBiLi = 0.12;
 
     // 养老
-    $("yangLaoFei").oninput = function(){
+    $("yangLaoFei").oninput = function () {
         setBaoXianFei();
-    }    
+    }
     baoXianJiShuLianDong("yangLaoJiShu", "yangLaoFei", yangLaoBiLi, 0);
     // 失业
-    $("shiYeFei").oninput = function(){
+    $("shiYeFei").oninput = function () {
         setBaoXianFei();
     }
     baoXianJiShuLianDong("shiYeJiShu", "shiYeFei", shiYeBiLi, 0);
     // 工伤
-    $("gongShangFei").oninput = function(){
+    $("gongShangFei").oninput = function () {
         setBaoXianFei();
     }
     baoXianJiShuLianDong("gongShangJiShu", "gongShangFei", 0.0, 0);
     // 生育
-    $("shengYvFei").oninput = function(){
+    $("shengYvFei").oninput = function () {
         setBaoXianFei();
     }
     baoXianJiShuLianDong("shengYvJiShu", "shengYvFei", 0.0, 0);
     // 医疗
-    $("yiLiaoFei").oninput = function(){
+    $("yiLiaoFei").oninput = function () {
         setBaoXianFei();
     }
     baoXianJiShuLianDong("yiLiaoJiShu", "yiLiaoFei", yiLiaoBiLi, 3);
 
     // 公积金联动
-    $("gongJiJinJiShu").oninput = function() {
+    $("gongJiJinJiShu").oninput = function () {
 
         var gongJiJinJiShu = $("gongJiJinJiShu").value;
-        gongJiJinJiShu = gongJiJinJiShu==""?0:gongJiJinJiShu;
-        var gongJiJinFei = gongJiJinJiShu*gongJiJinBiLi;
+        gongJiJinJiShu = gongJiJinJiShu == "" ? 0 : gongJiJinJiShu;
+        var gongJiJinFei = gongJiJinJiShu * gongJiJinBiLi;
         $("gongJiJinFei").value = gongJiJinFei;
         $("gongJiJin").value = gongJiJinFei;
-        $("gongJiJinAcc").value = gongJiJinFei*qiShu;
+        $("gongJiJinAcc").value = gongJiJinFei * qiShu;
     }
-    $("gongJiJinFei").oninput = function() {
+    $("gongJiJinFei").oninput = function () {
 
         var gongJiJinFei = $("gongJiJinFei").value;
-        gongJiJinFei = gongJiJinFei==""?0:gongJiJinFei;
+        gongJiJinFei = gongJiJinFei == "" ? 0 : gongJiJinFei;
         $("gongJiJin").value = gongJiJinFei;
-        $("gongJiJinAcc").value = gongJiJinFei*qiShu;
+        $("gongJiJinAcc").value = gongJiJinFei * qiShu;
     }
 
     // 根据输入计算累积，没有累计值的情况下，使用单个月的值乘以期数
@@ -225,7 +225,15 @@ function cal() {
         var tuiBuTax = Math.round(tax - yiJiaoTax).toFixed(2); //退补税款
         $("tuiBuTax").value = tuiBuTax;
         // 收入
-        $("shouRu").value = Math.round(parseFloat($("gongZi").value - $("baoXian").value - $("gongJiJin").value - tuiBuTax + parseFloat($("buZhu").value))).toFixed(2);
+        function toFloat(id) {
+            var num = $(id).value;
+            if (num == "") {
+                num = 0;
+            }
+            return parseFloat(num);
+        }
+        var shouRu = toFloat("gongZi")-toFloat("baoXian") - toFloat("gongJiJin") - tuiBuTax + toFloat("buZhu");
+        $("shouRu").value = Math.round(shouRu >= 0 ? shouRu : 0).toFixed(2);
 
         // 税率
         function GetTaxLv(taxShuoDe) {
