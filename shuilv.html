@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/shuilv.css">
     <meta name="keywords" content="个税计算器,个税累计预扣法,个人所得税计算器,个税计算器2019,个人所得税">
     <meta name="description" content="2019年最新个人所得税计算器，采用2019年最新个税税率表，提供工资、税后工资、年终奖、劳务报酬等个税累计预扣预缴计算方法，2019年最好用的个税计算器,个税管理专家。">
     <script type="text/javascript" src="js/my.js"></script>
+    <script type="text/javascript" src="js/shuilv.js"></script>
     <title>个税计算器2019</title>
 </head>
 
@@ -34,12 +35,71 @@
     <div class="main">
         <div class="inner_c">
             <div class="gap"></div>
+            <div class="shuilvbiao" id="shuilvbiao">
+                <h1>5000起征点的个税税率表</h1>
+                <div class="tablehead">
+                    <span>级数</span>
+                    <span>应纳税收入额(含税)</span>
+                    <span>应纳税收入额(不含税)</span>
+                    <span>税率(%)</span>
+                    <span>速算扣除数</span>
+                </div>
+                <div class="row">
+                    <span>1</span>
+                    <span>未超过3000元的部分</span>
+                    <span>未超过2910元的</span>
+                    <span>3%</span>
+                    <span>0</span>
+                </div>
+                <div class="row">
+                    <span>2</span>
+                    <span>超过3000元至12,000元的部分</span>
+                    <span>超过2910元至11,010元的部分</span>
+                    <span>10%</span>
+                    <span>210</span>
+                </div>
+                <div class="row">
+                    <span>3</span>
+                    <span>超过12,000元至25,000元的部分</span>
+                    <span>超过11,010元至21,410元的部分</span>
+                    <span>20%</span>
+                    <span>1410</span>
+                </div>
+                <div class="row">
+                    <span>4</span>
+                    <span>超过25,000元至35,000元的部分</span>
+                    <span>超过21,410元至28,910元的部分</span>
+                    <span>25%</span>
+                    <span>2660</span>
+                </div>
+                <div class="row">
+                    <span>5</span>
+                    <span>超过35,000元至55,000元的部分</span>
+                    <span>超过28,910元至42,910元的部分</span>
+                    <span>30%</span>
+                    <span>4410</span>
+                </div>
+                <div class="row">
+                    <span>6</span>
+                    <span>超过55,000元至80,000元的部分</span>
+                    <span>超过42,910元至59,160元的部分</span>
+                    <span>35%</span>
+                    <span>7160</span>
+                </div>
+                <div class="row">
+                    <span>7</span>
+                    <span>超过80,000元的部分</span>
+                    <span>超过59,160的部分</span>
+                    <span>45%</span>
+                    <span>15160</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="gap"></div>
     <div class="footer">
         <div class="inner_c">
-            <div class="beiAn">京ICP备xxxxxxxx号-x    Copyright &copy; 2019. All Rights Reserved.</div>
+            <div class="beiAn">京ICP备xxxxxxxx号-x Copyright &copy; 2019. All Rights Reserved.</div>
         </div>
     </div>
 </body>

@@ -1,0 +1,28 @@
+.shuilvbiao {
+    margin: 0 auto;
+    width: 560px;
+}
+.shuilvbiao h1 {
+    font: 700 20px/50px "microsoft yahei";
+}
+
+.shuilvbiao .tablehead {
+    background-color: #e2ebff;
+}
+
+.shuilvbiao span {
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #e2ebff;
+}
+
+.shuilvbiao .tablehead,
+.shuilvbiao .row {
+    height: 45px;
+    line-height: 45px;
+}
+
+.shuilvbiao .row {
+    border: 1px solid #e2ebff;
+    border-right: 0px solid #e2ebff;
+}
