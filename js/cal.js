@@ -190,15 +190,25 @@ function cal() {
     // 获取前一个月的应税所得
     function GetPreMonthTaxShuoDe(qiShu) {
 
+        function preMonthValue(accId, id, qiShu) {
+            var acc = $(accId).value;
+            if (acc == "") {
+                acc = $(id).value * qiShu;
+            } else {
+                acc = acc - $(id).value;
+            }
+            return acc;
+        }
+
         qiShu--;
         if (qiShu <= 0) {
             return 0;
         } else {
-            var gongZiAcc = $("gongZi").value * qiShu;
-            var buZhuAcc = $("buZhu").value * qiShu;
-            var baoXianAcc = $("baoXian").value * qiShu;
-            var gongJiJinAcc = $("gongJiJin").value * qiShu;
-            var fuJiaAcc = $("fuJia").value * qiShu;
+            var gongZiAcc = preMonthValue("gongZiAcc", "gongZi", qiShu);   
+            var buZhuAcc = preMonthValue("buZhuAcc", "buZhu", qiShu); 
+            var baoXianAcc = preMonthValue("baoXianAcc", "baoXian", qiShu);            
+            var gongJiJinAcc = preMonthValue("gongJiJinAcc", "gongJiJin", qiShu);            
+            var fuJiaAcc = preMonthValue("fuJiaAcc", "fuJia", qiShu);  
             // 总收入去掉免税额得到应税金额
             var taxShuoDe = parseFloat(gongZiAcc) + parseFloat(buZhuAcc) - 5000 * qiShu - baoXianAcc - gongJiJinAcc - fuJiaAcc;
 
@@ -232,7 +242,7 @@ function cal() {
             }
             return parseFloat(num);
         }
-        var shouRu = toFloat("gongZi")-toFloat("baoXian") - toFloat("gongJiJin") - tuiBuTax + toFloat("buZhu");
+        var shouRu = toFloat("gongZi") - toFloat("baoXian") - toFloat("gongJiJin") - tuiBuTax + toFloat("buZhu");
         $("shouRu").value = (shouRu >= 0 ? shouRu : 0).toFixed(2);
 
         // 税率
