@@ -177,6 +177,11 @@ body{
     margin: 0 10px;
 }
 
+.nav ul li:hover,
+.nav ol li:hover {
+    color: red;
+}
+
 .nav ol li {
     float: left;
     margin: 0 10px;
