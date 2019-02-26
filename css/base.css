@@ -174,12 +174,7 @@ body{
 
 .nav ul li {
     float: left;
-    margin: 0 10px;
-}
-
-.nav ul li:hover,
-.nav ol li:hover {
-    color: red;
+    margin: 0 10px;    
 }
 
 .nav ol li {
@@ -187,10 +182,18 @@ body{
     margin: 0 10px;
 }
 
+.nav a{
+    display: block;
+}
+
 .nav .current {
     border-bottom: 2px solid red;
 }
 
+.footer {
+    height: 30px;
+    line-height: 30px;
+}
 .beiAn{
     text-align: center;
 }
