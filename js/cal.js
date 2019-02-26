@@ -19,7 +19,7 @@ function cal() {
 
     function lianDong(input, acc) {
         $(input).oninput = function () {
-            $(acc).value = this.value * qiShu;
+            $(acc).value = (this.value * qiShu).toFixed(2);
         }
     }
 
@@ -95,8 +95,8 @@ function cal() {
 
         var baoXianFei = parseFloat(yangLaoFei == "" ? 0 : yangLaoFei) + parseFloat(shiYeFei == "" ? 0 : shiYeFei) +
             parseFloat(gongShangFei == "" ? 0 : gongShangFei) + parseFloat(shengYvFei == "" ? 0 : shengYvFei) + parseFloat(yiLiaoFei == "" ? 0 : yiLiaoFei);
-        $("baoXian").value = Math.round(baoXianFei).toFixed(2);
-        $("baoXianAcc").value = Math.round(baoXianFei * qiShu).toFixed(2);
+        $("baoXian").value = baoXianFei.toFixed(2);
+        $("baoXianAcc").value = (baoXianFei * qiShu).toFixed(2);
     }
 
     //保险基数联动 保险费 
@@ -104,7 +104,7 @@ function cal() {
         $(jishu).oninput = function () {
             var jiShu = $(jishu).value;
             jiShu = jiShu == "" ? 0 : jiShu;
-            $(fei).value = Math.round(jiShu * rate + parseFloat(extra)).toFixed(2);
+            $(fei).value = (jiShu * rate + parseFloat(extra)).toFixed(2);
 
             setBaoXianFei();
         }
@@ -210,19 +210,19 @@ function cal() {
         var taxKouChu = $("taxKouChu").value;
 
         var taxShuoDe = GetTaxShuoDe(qiShu);
-        $("taxShuoDe").innerText = "应纳税所得额" + Math.round(taxShuoDe).toFixed(2) + "元";
+        $("taxShuoDe").innerText = "应纳税所得额" + taxShuoDe.toFixed(2) + "元";
         var taxLv = GetTaxLv(taxShuoDe);
         $("taxLv").innerText = "适用税率" + taxLv + "%";
         var kouChuShu = GetKouChuShu(taxShuoDe);
         $("taxKouChu").innerText = "速算扣除数" + kouChuShu + "元";
-        var tax = Math.round(taxShuoDe * taxLv / 100 - kouChuShu).toFixed(2);
+        var tax = (taxShuoDe * taxLv / 100 - kouChuShu).toFixed(2);
         $("yingJiaotax").value = tax; //累积应交税款
 
         // 前一个月应税所得
         var preMonthTaxShuoDe = GetPreMonthTaxShuoDe(qiShu);
-        var yiJiaoTax = Math.round(preMonthTaxShuoDe * GetTaxLv(preMonthTaxShuoDe) / 100 - GetKouChuShu(preMonthTaxShuoDe)).toFixed(2); //已交税
+        var yiJiaoTax = (preMonthTaxShuoDe * GetTaxLv(preMonthTaxShuoDe) / 100 - GetKouChuShu(preMonthTaxShuoDe)).toFixed(2); //已交税
         $("yiJiaoTax").value = yiJiaoTax; //已缴税款
-        var tuiBuTax = Math.round(tax - yiJiaoTax).toFixed(2); //退补税款
+        var tuiBuTax = (tax - yiJiaoTax).toFixed(2); //退补税款
         $("tuiBuTax").value = tuiBuTax;
         // 收入
         function toFloat(id) {
@@ -233,7 +233,7 @@ function cal() {
             return parseFloat(num);
         }
         var shouRu = toFloat("gongZi")-toFloat("baoXian") - toFloat("gongJiJin") - tuiBuTax + toFloat("buZhu");
-        $("shouRu").value = Math.round(shouRu >= 0 ? shouRu : 0).toFixed(2);
+        $("shouRu").value = (shouRu >= 0 ? shouRu : 0).toFixed(2);
 
         // 税率
         function GetTaxLv(taxShuoDe) {
