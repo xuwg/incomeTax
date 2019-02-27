@@ -3,7 +3,7 @@
     width: 560px;
 }
 .shuilvbiao h1 {
-    font: 700 20px/50px "microsoft yahei";
+    font: 700 15px/30px "microsoft yahei";
 }
 
 .shuilvbiao .tablehead {
@@ -25,4 +25,8 @@
 .shuilvbiao .row {
     border: 1px solid #e2ebff;
     border-right: 0px solid #e2ebff;
+}
+
+.shuilvbiao img {
+    width: 560px;
 }
