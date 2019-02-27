@@ -18,9 +18,11 @@ function cal() {
     }
 
     function lianDong(input, acc) {
-        $(input).oninput = function () {
+        function dong() {
             $(acc).value = (this.value * qiShu).toFixed(2);
         }
+        $(input).oninput = dong;
+        $(input).onpropertychange = dong;
     }
 
     function select(item) {
@@ -101,13 +103,21 @@ function cal() {
 
     //保险基数联动 保险费 
     function baoXianJiShuLianDong(jishu, fei, rate, extra) {
-        $(jishu).oninput = function () {
+        function baoXianJiShuDong() {
             var jiShu = $(jishu).value;
             jiShu = jiShu == "" ? 0 : jiShu;
             $(fei).value = (jiShu * rate + parseFloat(extra)).toFixed(2);
 
             setBaoXianFei();
-        }
+        };
+        $(jishu).oninput = baoXianJiShuDong;
+        $(jishu).onpropertychange = baoXianJiShuDong;
+    }
+
+    //单项保险费联动 保险费 
+    function baoXianFeiLianDong(fei) {
+        $(fei).oninput = setBaoXianFei;
+        $(fei).onpropertychange = setBaoXianFei;
     }
 
     // 养老比例
@@ -120,48 +130,41 @@ function cal() {
     var gongJiJinBiLi = 0.12;
 
     // 养老
-    $("yangLaoFei").oninput = function () {
-        setBaoXianFei();
-    }
+    baoXianFeiLianDong("yangLaoFei");
     baoXianJiShuLianDong("yangLaoJiShu", "yangLaoFei", yangLaoBiLi, 0);
     // 失业
-    $("shiYeFei").oninput = function () {
-        setBaoXianFei();
-    }
+    baoXianFeiLianDong("shiYeFei");
     baoXianJiShuLianDong("shiYeJiShu", "shiYeFei", shiYeBiLi, 0);
     // 工伤
-    $("gongShangFei").oninput = function () {
-        setBaoXianFei();
-    }
+    baoXianFeiLianDong("gongShangFei");
     baoXianJiShuLianDong("gongShangJiShu", "gongShangFei", 0.0, 0);
     // 生育
-    $("shengYvFei").oninput = function () {
-        setBaoXianFei();
-    }
+    baoXianFeiLianDong("shengYvFei");
     baoXianJiShuLianDong("shengYvJiShu", "shengYvFei", 0.0, 0);
     // 医疗
-    $("yiLiaoFei").oninput = function () {
-        setBaoXianFei();
-    }
+    baoXianFeiLianDong("yiLiaoFei");
     baoXianJiShuLianDong("yiLiaoJiShu", "yiLiaoFei", yiLiaoBiLi, 3);
 
     // 公积金联动
-    $("gongJiJinJiShu").oninput = function () {
-
+    function gongJiJinJiShuDong() {
         var gongJiJinJiShu = $("gongJiJinJiShu").value;
         gongJiJinJiShu = gongJiJinJiShu == "" ? 0 : gongJiJinJiShu;
         var gongJiJinFei = gongJiJinJiShu * gongJiJinBiLi;
         $("gongJiJinFei").value = gongJiJinFei;
         $("gongJiJin").value = gongJiJinFei;
         $("gongJiJinAcc").value = gongJiJinFei * qiShu;
-    }
-    $("gongJiJinFei").oninput = function () {
+    };
+    $("gongJiJinJiShu").oninput = gongJiJinJiShuDong;
+    $("gongJiJinJiShu").onpropertychange = gongJiJinJiShuDong;
+    function gongJiJinFeiDong() {
 
         var gongJiJinFei = $("gongJiJinFei").value;
         gongJiJinFei = gongJiJinFei == "" ? 0 : gongJiJinFei;
         $("gongJiJin").value = gongJiJinFei;
         $("gongJiJinAcc").value = gongJiJinFei * qiShu;
-    }
+    };
+    $("gongJiJinFei").oninput = gongJiJinFeiDong;
+    $("gongJiJinFei").onpropertychange = gongJiJinFeiDong;
 
     // 根据输入计算累积，没有累计值的情况下，使用单个月的值乘以期数
     function prepare(input, acc, qiShu) {
@@ -204,11 +207,11 @@ function cal() {
         if (qiShu <= 0) {
             return 0;
         } else {
-            var gongZiAcc = preMonthValue("gongZiAcc", "gongZi", qiShu);   
-            var buZhuAcc = preMonthValue("buZhuAcc", "buZhu", qiShu); 
-            var baoXianAcc = preMonthValue("baoXianAcc", "baoXian", qiShu);            
-            var gongJiJinAcc = preMonthValue("gongJiJinAcc", "gongJiJin", qiShu);            
-            var fuJiaAcc = preMonthValue("fuJiaAcc", "fuJia", qiShu);  
+            var gongZiAcc = preMonthValue("gongZiAcc", "gongZi", qiShu);
+            var buZhuAcc = preMonthValue("buZhuAcc", "buZhu", qiShu);
+            var baoXianAcc = preMonthValue("baoXianAcc", "baoXian", qiShu);
+            var gongJiJinAcc = preMonthValue("gongJiJinAcc", "gongJiJin", qiShu);
+            var fuJiaAcc = preMonthValue("fuJiaAcc", "fuJia", qiShu);
             // 总收入去掉免税额得到应税金额
             var taxShuoDe = parseFloat(gongZiAcc) + parseFloat(buZhuAcc) - 5000 * qiShu - baoXianAcc - gongJiJinAcc - fuJiaAcc;
 
