@@ -1,32 +1,28 @@
 .shuilvbiao {
     margin: 0 auto;
+    background-color: #fff;
+    padding: 10px 0;    
+}
+.shuilvbiao table {
     width: 560px;
+    margin: 0 auto;
 }
-.shuilvbiao h1 {
-    font: 700 15px/30px "microsoft yahei";
-}
-
-.shuilvbiao .tablehead {
-    background-color: #e2ebff;
-}
-
-.shuilvbiao span {
-    display: inline-block;
+.shuilvbiao table,
+.shuilvbiao th,
+.shuilvbiao td
+{
+    border: 1px solid #ccc;
     text-align: center;
-    border-right: 1px solid #e2ebff;
 }
 
-.shuilvbiao .tablehead,
-.shuilvbiao .row {
-    height: 45px;
-    line-height: 45px;
+.shuilvbiao th{
+    background-color:#ddd;
 }
 
-.shuilvbiao .row {
-    border: 1px solid #e2ebff;
-    border-right: 0px solid #e2ebff;
+.shuilvbiao h1 {
+    font: 700 12px/20px "microsoft yahei";
 }
-
-.shuilvbiao img {
-    width: 560px;
+.shuilvbiao h1,
+.shuilvbiao span {
+    padding: 0 10px;
 }
