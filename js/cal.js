@@ -1,4 +1,18 @@
 function cal() {
+
+    var browser = navigator.appName
+    var b_version = navigator.appVersion
+    var version = b_version.split(";");
+    var trim_Version = version[1].replace(/[ ]/g, "");
+    var ie678 = false;
+    if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE6.0") {
+        ie678 = true;
+    } else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE7.0") {
+        ie678 = true;
+    } else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE8.0") {
+        ie678 = true;
+    } else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE9.0") {}
+
     var qiShu = $("qiShu").value;
     $("gongZi").focus();
 
@@ -22,7 +36,9 @@ function cal() {
             $(acc).value = (this.value * qiShu).toFixed(2);
         }
         $(input).oninput = dong;
-        $(input).onpropertychange = dong;
+        if (ie678) {
+            $(input).onpropertychange = dong;
+        }
     }
 
     function select(item) {
@@ -111,13 +127,17 @@ function cal() {
             setBaoXianFei();
         };
         $(jishu).oninput = baoXianJiShuDong;
-        $(jishu).onpropertychange = baoXianJiShuDong;
+        if (ie678) {
+            $(jishu).onpropertychange = baoXianJiShuDong;
+        }
     }
 
     //单项保险费联动 保险费 
     function baoXianFeiLianDong(fei) {
         $(fei).oninput = setBaoXianFei;
-        $(fei).onpropertychange = setBaoXianFei;
+        if (ie678) {
+            $(fei).onpropertychange = setBaoXianFei;
+        }
     }
 
     // 养老比例
@@ -155,7 +175,10 @@ function cal() {
         $("gongJiJinAcc").value = gongJiJinFei * qiShu;
     };
     $("gongJiJinJiShu").oninput = gongJiJinJiShuDong;
-    $("gongJiJinJiShu").onpropertychange = gongJiJinJiShuDong;
+    if (ie678) {
+        $("gongJiJinJiShu").onpropertychange = gongJiJinJiShuDong;
+    }
+
     function gongJiJinFeiDong() {
 
         var gongJiJinFei = $("gongJiJinFei").value;
@@ -164,7 +187,9 @@ function cal() {
         $("gongJiJinAcc").value = gongJiJinFei * qiShu;
     };
     $("gongJiJinFei").oninput = gongJiJinFeiDong;
-    $("gongJiJinFei").onpropertychange = gongJiJinFeiDong;
+    if (ie678) {
+        $("gongJiJinFei").onpropertychange = gongJiJinFeiDong;
+    }
 
     // 根据输入计算累积，没有累计值的情况下，使用单个月的值乘以期数
     function prepare(input, acc, qiShu) {
