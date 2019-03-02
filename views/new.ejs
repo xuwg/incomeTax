@@ -35,33 +35,11 @@
 <div class="main">
   <div class="inner_c">
     <div class="gap"></div>
-    <div class="content clearfix">
-      <p class="title"><a href="/news">资讯</a>></p>
-      <ul class="fl">
-        <p>计算器资讯</p>
-        <% news.forEach(function (item, index) { %>
-        <li><a href="<%= item["href"] %>"><%=item["title"]%></a></li>
-        <% }); %>
-      </ul>
-      <ul class="fl">
-        <p>计算器资讯</p>
-        <% news.forEach(function (item, index) { %>
-        <li><a href="<%= item["href"] %>"><%=item["title"]%></a></li>
-        <% }); %>
-      </ul>
-      <ul class="fl">
-        <p>计算器资讯</p>
-        <% news.forEach(function (item, index) { %>
-        <li><a href="<%= item["href"] %>"><%=item["title"]%></a></li>
-        <% }); %>
-      </ul>
-      <ul class="fl">
-        <p>计算器资讯</p>
-        <% news.forEach(function (item, index) { %>
-        <li><a href="<%= item["href"] %>"><%=item["title"]%></a></li>
-        <% }); %>
-      </ul>
+    <div class="content">
+      <p class="title"><a href="/news">资讯</a>><a href="<%=index%>"><%=title%></a></p>
+      <div><%-content%></div>
     </div>
+
   </div>
 </div>
 <div class="gap"></div>

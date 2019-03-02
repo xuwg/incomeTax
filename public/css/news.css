@@ -1,0 +1,25 @@
+.content {
+    line-height: 25px;
+}
+.content .title {
+    margin: 0 0 2px 0;
+}
+.content h1 {
+    line-height: 25px;
+    font: 15px/25px "microsoft yahei";
+}
+.content ul {
+    overflow: hidden;
+    height: 400px;
+    width: 285px;
+    margin: 0px 5px 5px 0;
+    background-color: #fff;
+}
+.content ul p{
+    text-align: center;
+    background-color: #ccc;
+}
+.content ul li {
+    /*margin: 0 0 0 5px;*/
+    text-align: center;
+}

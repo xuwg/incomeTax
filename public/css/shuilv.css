@@ -25,4 +25,5 @@
 .shuilvbiao h1,
 .shuilvbiao span {
     padding: 0 10px;
+    display: block;
 }
