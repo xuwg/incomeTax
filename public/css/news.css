@@ -1,5 +1,5 @@
 .content {
-    line-height: 25px;
+    line-height: 32px;
 }
 .content .title {
     margin: 0 0 2px 0;
@@ -10,7 +10,7 @@
 }
 .content ul {
     overflow: hidden;
-    height: 400px;
+    height: 420px;
     width: 285px;
     margin: 0px 5px 5px 0;
     background-color: #fff;
