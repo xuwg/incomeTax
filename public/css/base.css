@@ -177,6 +177,10 @@ body{
     margin: 0 10px 0  0;
 }
 
+.nav ol {
+    position: relative;
+}
+
 .nav ol li {
     float: left;
     margin: 0 10px;
@@ -188,6 +192,19 @@ body{
 
 .nav .current {
     border-bottom: 2px solid red;
+}
+
+.nav .qrcode img{
+    width: 75px;
+    /*padding: 5px;*/
+    /*background-color: blue;*/
+}
+
+.nav .qrcode {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    display: none;
 }
 
 .footer {

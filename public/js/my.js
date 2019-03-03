@@ -25,3 +25,18 @@ function scroll() {
         top: document.body.scrollTop
     }
 }
+
+function mores() {
+    var items = $("nav").children[1].children;
+    for (var i = 0; i < items.length; ++i) {
+        items[i].onmouseover = function () {
+            var qrcode = $("qrcode");
+            show(qrcode);
+            qrcode.style.left = this.offsetLeft - 15 +"px";
+        }
+        items[i].onmouseout = function () {
+            var qrcode = $("qrcode");
+            hide(qrcode);
+        }
+    }
+}
